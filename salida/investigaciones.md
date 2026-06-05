@@ -1,6 +1,32 @@
 # 📡 Newty - Investigacion 2026-06-05
 
 **Fuente:** Investigacion manual
+**Generado:** 05/06/2026 00:15
+**Proyectos:** 1
+
+---
+
+### **authentik** (https://github.com/goauthentik/authentik)
+
+⭐ **21,800** estrellas · por [goauthentik](https://github.com/goauthentik) · [goauthentik.io](https://goauthentik.io)
+
+Proveedor de identidad (IdP) open source para SSO moderno. Soporta SAML, OAuth2/OIDC, LDAP y RADIUS. Disenado para self-hosting desde pequenos labs hasta grandes clusters de produccion.
+
+✨ **Caracteristicas:**
+* SSO con soporte SAML, OAuth2/OIDC, LDAP y RADIUS
+* Despliegue flexible: Docker Compose, Kubernetes, AWS
+* Interfaz web para administracion y portal de usuario
+* Enterprise ready: reemplaza Okta, Auth0, Entra ID
+* Flujos de autenticacion personalizables con blueprints
+* [Ver repositorio](https://github.com/goauthentik/authentik)
+
+---
+
+*Fin del reporte - 05/06/2026 00:15*
+
+# 📡 Newty - Investigacion 2026-06-05
+
+**Fuente:** Investigacion manual
 **Generado:** 05/06/2026 00:10
 **Proyectos:** 1
 
