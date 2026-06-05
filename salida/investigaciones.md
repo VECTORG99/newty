@@ -1,27 +1,35 @@
+# 📡 Newty - Investigacion 2026-06-05
+
+**Fuente:** Investigacion manual  
+**Generado:** 05/06/2026 00:05  
+**Proyectos:** 1
+
+---
+
+### **GoDoxy** (https://github.com/yusing/godoxy)
+
+⭐ **3,300** estrellas · por [yusing](https://github.com/yusing) · [docs.godoxy.dev](https://docs.godoxy.dev)
+
+Reverse proxy de alto rendimiento y orquestador de contenedores para self-hosters. Escrito en Go, con WebUI, SSL automatico y soporte para Docker y Proxmox.
+
+✨ **Caracteristicas:**
+* WebUI integrada con dashboard, editor de config y metricas
+* SSL automatico con Let's Encrypt (DNS-01 Challenge)
+* Auto-configuracion de contenedores Docker con hot-reload
+* Idle-sleep: detiene y reactiva contenedores segun trafico
+* Soporte Proxmox: gestion de nodos y LXC desde WebUI
+* [Ver repositorio](https://github.com/yusing/godoxy)
+
+---
+
+*Fin del reporte - 05/06/2026 00:05*
+
+
 # 📡 Newty - Investigacion 2026-06-04
 
 **Fuente:** GitHub Trending  
 **Generado:** 04/06/2026 23:59  
 **Proyectos:** 1
-
----
-
-### **headroom**
-https://github.com/chopratejas/headroom
-
-⭐ **3,142** estrellas · por [chopratejas](https://github.com/chopratejas)
-
-Compress herramienta outputs, logs, files, y RAG chunks before they reach el LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP servidor.
-
-✨ **Caracteristicas:**
-* Repositorio de codigo abierto activo
-* 3,142 estrellas en GitHub
-* Tecnologia en tendencia
-* [Ver repositorio](https://github.com/chopratejas/headroom)
-
----
-
-*Fin del reporte - 04/06/2026 23:59*
 
 
 # 📡 Newty - Investigacion 2026-06-04
