@@ -141,14 +141,13 @@ def generar_ficha(proyecto):
     if len(features) > MAX_FEATURES:
         features = features[:MAX_FEATURES]
 
-    ficha = f"### **{nombre}** ({repo_url})\n\n"
+    ficha = f"**{nombre}** ({repo_url})\n\n"
     ficha += f"⭐ **{stars}** estrellas · por [{autor}](https://github.com/{autor})\n\n"
     ficha += f"{desc_es}\n\n"
     ficha += "✨ **Caracteristicas:**\n"
     for f in features:
         ficha += f"* {f}\n"
-    ficha += f"* [Ver repositorio]({repo_url})\n\n"
-    ficha += "---\n"
+    ficha += f"* [Ver repositorio]({repo_url})"
 
     return ficha
 
