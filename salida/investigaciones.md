@@ -1,7 +1,7 @@
 # 📡 Newty - Investigacion 2026-06-05
 
-**Fuente:** Investigacion manual  
-**Generado:** 05/06/2026 00:05  
+**Fuente:** Investigacion manual
+**Generado:** 05/06/2026 00:05
 **Proyectos:** 1
 
 ---
@@ -24,18 +24,10 @@ Reverse proxy de alto rendimiento y orquestador de contenedores para self-hoster
 
 *Fin del reporte - 05/06/2026 00:05*
 
-
 # 📡 Newty - Investigacion 2026-06-04
 
-**Fuente:** GitHub Trending  
-**Generado:** 04/06/2026 23:59  
-**Proyectos:** 1
-
-
-# 📡 Newty - Investigacion 2026-06-04
-
-**Fuente:** Investigacion manual  
-**Generado:** 04/06/2026 23:55  
+**Fuente:** Investigacion manual
+**Generado:** 04/06/2026 23:55
 **Proyectos:** 1
 
 ---
@@ -58,11 +50,10 @@ Plataforma de desarrollo Postgres que ofrece las funcionalidades de Firebase con
 
 *Fin del reporte - 04/06/2026 23:55*
 
-
 # 📡 Newty - Investigacion 2026-06-04
 
-**Fuente:** Investigacion manual  
-**Generado:** 04/06/2026 23:36  
+**Fuente:** Investigacion manual
+**Generado:** 04/06/2026 23:36
 **Proyectos:** 1
 
 ---
@@ -85,17 +76,10 @@ El agente de programacion con IA de codigo abierto. Funciona en terminal, IDE o 
 
 *Fin del reporte - 04/06/2026 23:36*
 
-
-# Newty - Historial de Investigaciones
-
-Investigaciones automatizadas de proyectos trending en GitHub.
-
----
-
 # 📡 Newty - Investigacion 2026-06-04
 
-**Fuente:** GitHub Trending  
-**Generado:** 04/06/2026 23:53  
+**Fuente:** GitHub Trending
+**Generado:** 04/06/2026 23:53
 **Proyectos:** 1
 
 ---
@@ -117,11 +101,10 @@ Compress herramienta outputs, logs, files, y RAG chunks before they reach el LLM
 
 *Fin del reporte - 04/06/2026 23:53*
 
-
 # 📡 Newty - Investigacion 2026-06-04
 
-**Fuente:** GitHub Trending  
-**Generado:** 04/06/2026 23:36  
+**Fuente:** GitHub Trending
+**Generado:** 04/06/2026 23:36
 **Proyectos:** 10
 
 ---
