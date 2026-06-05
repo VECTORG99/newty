@@ -8,7 +8,7 @@
 
 **Prometheus** (https://github.com/prometheus/prometheus)
 
-⭐ **64.3k** estrellas · por [prometheus](https://github.com/prometheus) · [prometheus.io](https://prometheus.io)
+⭐ **64.3k** estrellas · por [prometheus](https://github.com/prometheus)
 
 Sistema de monitoreo y base de datos de series de tiempo. Proyecto graduado de CNCF con un modelo de datos multidimensional y potente lenguaje de consulta PromQL.
 
@@ -18,7 +18,6 @@ Sistema de monitoreo y base de datos de series de tiempo. Proyecto graduado de C
 * Modelo pull: recoleccion de metricas via HTTP con service discovery
 * Alertas configurables con Alertmanager integrado
 * Multiples opciones de visualizacion (Grafana, consolas, API)
-* [Ver repositorio](https://github.com/prometheus/prometheus)
 
 ---
 
