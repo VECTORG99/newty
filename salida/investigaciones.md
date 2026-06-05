@@ -1,5 +1,31 @@
 # Newty - Investigacion 2026-06-04
 
+**Fuente:** Investigacion manual  
+**Generado:** 04/06/2026 23:55  
+**Proyectos:** 1
+
+---
+
+### 1. **Supabase** (https://github.com/supabase/supabase)
+
+**103,000** estrellas · por [supabase](https://github.com/supabase) · [supabase.com](https://supabase.com)
+
+Plataforma de desarrollo Postgres que ofrece las funcionalidades de Firebase con herramientas open source de nivel empresarial: base de datos, autenticacion, APIs, almacenamiento y mas.
+
+**Caracteristicas:**
+* Base de datos Postgres hosteada con replicacion y backups
+* Autenticacion y autorizacion integrada (OAuth, JWT)
+* APIs automaticas REST, GraphQL y Realtime
+* Almacenamiento de archivos con S3 y permisos Postgres
+* AI + Vectores/Embeddings con pgvector
+
+---
+
+*Fin del reporte - 04/06/2026 23:55*
+
+
+# Newty - Investigacion 2026-06-04
+
 **Fuente:** GitHub Trending  
 **Generado:** 04/06/2026 23:53  
 **Proyectos:** 1
