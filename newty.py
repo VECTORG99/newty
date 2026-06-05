@@ -14,8 +14,10 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SALIDA_DIR = os.path.join(SCRIPT_DIR, "salida")
 CONFIG_PATH = os.path.join(SCRIPT_DIR, "config.json")
 
+MAX_FEATURES = 5
+
 CONFIG_POR_DEFECTO = {
-    "cantidad": 10,
+    "cantidad": 1,
     "idioma": "",
     "historial": os.path.join(SALIDA_DIR, "investigaciones.md"),
 }
@@ -131,15 +133,22 @@ def generar_ficha(proyecto, i):
     desc_es = traducir_descripcion(desc)
     autor = proyecto.get("autor", "?")
 
+    features = [
+        "Codigo abierto",
+        f"{stars} estrellas",
+        f"Repo: {repo_url}",
+    ]
+    if len(features) > MAX_FEATURES:
+        features = features[:MAX_FEATURES]
+
     ficha = f"### {i}. **{nombre}**\n"
     ficha += f"{repo_url}\n\n"
-    ficha += f"⭐ **{stars}** estrellas · por [{autor}](https://github.com/{autor})\n\n"
+    ficha += f"**{stars}** estrellas · por [{autor}](https://github.com/{autor})\n\n"
     ficha += f"{desc_es}\n\n"
-    ficha += "✨ **Características destacadas:**\n"
-    ficha += "* Repositorio de código abierto activo\n"
-    ficha += "* Tecnología en tendencia en GitHub\n"
-    ficha += f"* [Ver repositorio]({repo_url})\n\n"
-    ficha += "---\n"
+    ficha += "**Caracteristicas:**\n"
+    for f in features:
+        ficha += f"* {f}\n"
+    ficha += "\n---\n"
 
     return ficha
 
@@ -148,7 +157,7 @@ def generar_informe(proyectos, fuentes="GitHub Trending"):
     ahora = datetime.now()
     fecha = ahora.strftime("%d/%m/%Y %H:%M")
 
-    informe = f"# 📡 Newty — Investigación {ahora.strftime('%Y-%m-%d')}\n\n"
+    informe = f"# Newty - Investigacion {ahora.strftime('%Y-%m-%d')}\n\n"
     informe += f"**Fuente:** {fuentes}  \n"
     informe += f"**Generado:** {fecha}  \n"
     informe += f"**Proyectos:** {len(proyectos)}\n\n"
@@ -157,7 +166,7 @@ def generar_informe(proyectos, fuentes="GitHub Trending"):
     for i, p in enumerate(proyectos, 1):
         informe += generar_ficha(p, i)
 
-    informe += f"\n*Fin del reporte — {fecha}*\n"
+    informe += f"\n*Fin del reporte - {fecha}*\n"
     return informe
 
 
@@ -172,7 +181,7 @@ def guardar_historial(texto, ruta_historial):
         contenido = texto + "\n\n" + existente
     else:
         contenido = (
-            "# 📡 Newty — Historial de Investigaciones\n\n"
+            "# Newty - Historial de Investigaciones\n\n"
             "Investigaciones automatizadas de proyectos trending en GitHub.\n\n"
             "---\n\n"
         ) + texto
@@ -190,7 +199,7 @@ def generar_html(md_texto):
         "<head>",
         '<meta charset="UTF-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
-        "<title>Newty — Investigación</title>",
+        "<title>Newty - Investigacion</title>",
         "<style>",
         "body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;"
         "max-width:800px;margin:0 auto;padding:20px;"
@@ -233,7 +242,7 @@ def cargar_config():
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Newty — Investigación de proyectos trending"
+        description="Newty - Investigacion de proyectos trending"
     )
     parser.add_argument(
         "--modo", choices=["github", "completo"], default="github",
@@ -241,7 +250,7 @@ def main():
     )
     parser.add_argument(
         "-c", "--cantidad", type=int, default=None,
-        help="Cantidad de proyectos (default: 10)",
+        help="Cantidad de proyectos (default: 1)",
     )
     parser.add_argument(
         "--no-html", action="store_true",
@@ -250,34 +259,34 @@ def main():
     args = parser.parse_args()
 
     config = cargar_config()
-    cantidad = args.cantidad or config.get("cantidad", 10)
+    cantidad = args.cantidad or config.get("cantidad", 1)
 
-    print("🔍 Newty — Investigando proyectos trending...\n")
+    print("Newty - Investigando proyectos trending...\n")
 
     proyectos = scrapear_github_trending(cantidad=cantidad)
 
     if not proyectos:
-        print("❌ No se pudieron obtener proyectos. Revisa tu conexión.")
+        print("No se pudieron obtener proyectos. Revisa tu conexion.")
         sys.exit(1)
 
-    print(f"✅ {len(proyectos)} proyectos obtenidos de GitHub Trending\n")
+    print(f"{len(proyectos)} proyectos obtenidos de GitHub Trending\n")
 
     if args.modo == "completo":
-        print("🌐 Modo completo: por ahora solo GitHub Trending disponible.\n")
+        print("Modo completo: por ahora solo GitHub Trending disponible.\n")
 
     informe = generar_informe(proyectos)
     ruta_historial = config["historial"]
     guardar_historial(informe, ruta_historial)
-    print(f"📄 Historial guardado: {ruta_historial}")
+    print(f"Historial guardado: {ruta_historial}")
 
     if not args.no_html:
         ruta_html = os.path.join(SALIDA_DIR, "newty.html")
         with open(ruta_html, "w", encoding="utf-8") as f:
             f.write(generar_html(informe))
-        print(f"🌐 HTML generado: {ruta_html}")
+        print(f"HTML generado: {ruta_html}")
 
     print(f"\n{'='*60}")
-    print(f"  📡 NEWTY — {len(proyectos)} PROYECTOS TRENDING")
+    print(f"  NEWTY - {len(proyectos)} PROYECTOS TRENDING")
     print(f"{'='*60}\n")
     print(informe)
 

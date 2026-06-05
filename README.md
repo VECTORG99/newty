@@ -1,31 +1,28 @@
-# 📡 Newty
+# Newty
 
-**Newty** es un script automatizado que investiga los proyectos más trending de **GitHub Trending** y genera fichas informativas en español con enlaces directos a los repositorios. Ideal para compartir con amigos y mantenerte al día con las tecnologías emergentes.
+Newty es un script automatizado que investiga los proyectos mas trending de **GitHub Trending** y genera fichas informativas en espanol con enlaces directos a los repositorios. Ideal para compartir con amigos y mantenerte al dia con las tecnologias emergentes.
 
-## 🚀 Características
+## Caracteristicas
 
-- 🔍 **Scraping de GitHub Trending** — Extrae los repositorios más populares del momento
-- 🌐 **Salida dual** — Genera automáticamente Markdown (historial acumulativo) y HTML (para compartir)
-- 📜 **Historial completo** — Cada ejecución se acumula en `salida/investigaciones.md`, manteniendo las investigaciones anteriores
-- 🎨 **HTML con estilo dark mode** — Visualmente atractivo, listo para abrir en el navegador
-- 🔌 **Sin dependencias externas** — Funciona solo con la librería estándar de Python 3
-- ⚙️ **Configurable** — Define la cantidad de proyectos por investigación
+- **Scraping de GitHub Trending** — Extrae los repositorios mas populares del momento
+- **Salida dual** — Genera Markdown (historial acumulativo) y HTML (para compartir)
+- **Historial completo** — Cada ejecucion se acumula en `salida/investigaciones.md`
+- **HTML con estilo dark mode** — Listo para abrir en el navegador
+- **Sin dependencias externas** — Solo usa la libreria estandar de Python 3
+- **Configurable** — Define la cantidad de proyectos por investigacion
 
-## 📦 Instalación
+## Instalacion
 
 ```bash
-# Clonar el repositorio
 git clone https://github.com/VECTORG99/newty.git
 cd newty
-
-# No requiere instalar dependencias (usa solo la stdlib de Python)
 python3 newty.py --help
 ```
 
-## 🧑‍💻 Uso
+## Uso
 
 ```bash
-# Ejecutar con 10 proyectos (por defecto)
+# Ejecutar con 1 proyecto (por defecto)
 python3 newty.py
 
 # Especificar cantidad de proyectos
@@ -34,7 +31,7 @@ python3 newty.py -c 5
 # Modo completo (preparado para futuras fuentes)
 python3 newty.py --modo completo
 
-# Omitir generación de HTML
+# Omitir generacion de HTML
 python3 newty.py --no-html
 ```
 
@@ -44,66 +41,48 @@ python3 newty.py --no-html
 ### 1. **headroom**
 https://github.com/chopratejas/headroom
 
-⭐ **3,142** estrellas · por chopratejas
+3,142 estrellas · por chopratejas
 
 Compress tool outputs, logs, files, and RAG chunks before they reach the LLM.
 
-✨ **Características destacadas:**
-* Repositorio de código abierto activo
-* Tecnología en tendencia en GitHub
-* [Ver repositorio](https://github.com/chopratejas/headroom)
+Caracteristicas:
+* Repositorio de codigo abierto activo
+* Tecnologia en tendencia en GitHub
+* Ver repositorio
 ```
 
-## 📁 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 newty/
 ├── newty.py                  # Script principal
-├── config.json               # Configuración
-├── fuentes/                  # Extracts por fuente (futuro)
-│   ├── github.py
-│   └── otras.py
+├── config.json               # Configuracion
+├── fuentes/                  # Extractores por fuente (futuro)
 ├── salida/
 │   ├── investigaciones.md    # Historial acumulativo en Markdown
-│   └── newty.html            # Última investigación en HTML
+│   └── newty.html            # Ultima investigacion en HTML
 ├── .gitignore
 └── README.md
 ```
 
-## ⚙️ Configuración
+## Configuracion
 
 Edita `config.json`:
 
 ```json
 {
-  "cantidad": 10,
+  "cantidad": 1,
   "idioma": "",
   "historial": "salida/investigaciones.md"
 }
 ```
 
-| Opción      | Descripción                                  | Default                      |
+| Opcion      | Descripcion                                  | Default                      |
 |-------------|----------------------------------------------|------------------------------|
-| `cantidad`  | Número de proyectos por investigación        | `10`                         |
-| `idioma`    | Filtrar por lenguaje de programación         | `""` (todos)                 |
+| `cantidad`  | Numero de proyectos por investigacion        | `1`                          |
+| `idioma`    | Filtrar por lenguaje de programacion         | `""` (todos)                 |
 | `historial` | Ruta del archivo de historial                | `salida/investigaciones.md`  |
 
-## 🗺️ Roadmap
-
-- [ ] **Mejorar la traducción** — Integrar API de traducción (DeepL, Google Translate) para descripciones más naturales
-- [ ] **Más fuentes** — Agregar Product Hunt, Hacker News, Reddit, y otros
-- [ ] **Publicación automatizada** — Compartir directamente a Telegram, WhatsApp, o Discord
-- [ ] **Modo web** — Interfaz web para visualizar el historial
-- [ ] **Estadísticas** — Analytics de tecnologías más repetidas en el tiempo
-
-## 🤝 Contribuir
-
-1. Crea un fork del proyecto
-2. Crea tu rama (`git checkout -b feature/nueva-funcionalidad`)
-3. Haz commit de tus cambios (`git commit -m 'feat: agrega nueva funcionalidad'`)
-4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
-
-## 📄 Licencia
+## Licencia
 
 MIT
