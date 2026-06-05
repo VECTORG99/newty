@@ -110,8 +110,7 @@ El agente de programacion con IA de codigo abierto. Funciona en terminal, IDE o 
 
 ---
 
-### **headroom**
-https://github.com/chopratejas/headroom
+### **headroom** (https://github.com/chopratejas/headroom)
 
 ⭐ **3,142** estrellas · por [chopratejas](https://github.com/chopratejas)
 
@@ -135,8 +134,7 @@ Compress herramienta outputs, logs, files, y RAG chunks before they reach el LLM
 
 ---
 
-### **headroom**
-https://github.com/chopratejas/headroom
+### **headroom** (https://github.com/chopratejas/headroom)
 
 ⭐ **3,142** estrellas · por [chopratejas](https://github.com/chopratejas)
 
@@ -149,8 +147,7 @@ Compress herramienta outputs, logs, files, y RAG chunks before they reach el LLM
 * [Ver repositorio](https://github.com/chopratejas/headroom)
 
 ---
-### **hermes-agent**
-https://github.com/NousResearch/hermes-agent
+### **hermes-agent** (https://github.com/NousResearch/hermes-agent)
 
 ⭐ **1,913** estrellas · por [NousResearch](https://github.com/NousResearch)
 
@@ -163,8 +160,7 @@ The agent que grows con you
 * [Ver repositorio](https://github.com/NousResearch/hermes-agent)
 
 ---
-### **ECC**
-https://github.com/affaan-m/ECC
+### **ECC** (https://github.com/affaan-m/ECC)
 
 ⭐ **1,750** estrellas · por [affaan-m](https://github.com/affaan-m)
 
@@ -177,8 +173,7 @@ The agent harness performance optimization system. Skills, instincts, memory, se
 * [Ver repositorio](https://github.com/affaan-m/ECC)
 
 ---
-### **PaddleOCR**
-https://github.com/PaddlePaddle/PaddleOCR
+### **PaddleOCR** (https://github.com/PaddlePaddle/PaddleOCR)
 
 ⭐ **141** estrellas · por [PaddlePaddle](https://github.com/PaddlePaddle)
 
@@ -191,8 +186,7 @@ Turn any PDF or image document into structured data para your AI. A powerful, li
 * [Ver repositorio](https://github.com/PaddlePaddle/PaddleOCR)
 
 ---
-### **spec-kit**
-https://github.com/github/spec-kit
+### **spec-kit** (https://github.com/github/spec-kit)
 
 ⭐ **321** estrellas · por [github](https://github.com/github)
 
@@ -205,8 +199,7 @@ Toolkit to help you get started con Spec-Driven Development
 * [Ver repositorio](https://github.com/github/spec-kit)
 
 ---
-### **cosmos**
-https://github.com/NVIDIA/cosmos
+### **cosmos** (https://github.com/NVIDIA/cosmos)
 
 ⭐ **133** estrellas · por [NVIDIA](https://github.com/NVIDIA)
 
@@ -219,8 +212,7 @@ NVIDIA Cosmos is un open plataforma of world models, datasets, y herramientas qu
 * [Ver repositorio](https://github.com/NVIDIA/cosmos)
 
 ---
-### **open-notebook**
-https://github.com/lfnovo/open-notebook
+### **open-notebook** (https://github.com/lfnovo/open-notebook)
 
 ⭐ **212** estrellas · por [lfnovo](https://github.com/lfnovo)
 
@@ -233,8 +225,7 @@ An Open Source implementation of Notebook LM con more flexibility y features
 * [Ver repositorio](https://github.com/lfnovo/open-notebook)
 
 ---
-### **Open-LLM-VTuber**
-https://github.com/Open-LLM-VTuber/Open-LLM-VTuber
+### **Open-LLM-VTuber** (https://github.com/Open-LLM-VTuber/Open-LLM-VTuber)
 
 ⭐ **581** estrellas · por [Open-LLM-VTuber](https://github.com/Open-LLM-VTuber)
 
@@ -247,8 +238,7 @@ Talk to any LLM con hands-free voice interaction, voice interruption, y Live2D t
 * [Ver repositorio](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber)
 
 ---
-### **coding-interview-university**
-https://github.com/jwasham/coding-interview-university
+### **coding-interview-university** (https://github.com/jwasham/coding-interview-university)
 
 ⭐ **632** estrellas · por [jwasham](https://github.com/jwasham)
 
@@ -261,8 +251,7 @@ A complete computer science study plan to become un software engineer.
 * [Ver repositorio](https://github.com/jwasham/coding-interview-university)
 
 ---
-### **copilot-sdk**
-https://github.com/github/copilot-sdk
+### **copilot-sdk** (https://github.com/github/copilot-sdk)
 
 ⭐ **38** estrellas · por [github](https://github.com/github)
 
