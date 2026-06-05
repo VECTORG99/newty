@@ -1,6 +1,32 @@
 # 📡 Newty - Investigacion 2026-06-05
 
 **Fuente:** Investigacion manual
+**Generado:** 05/06/2026 00:10
+**Proyectos:** 1
+
+---
+
+### **Glance** (https://github.com/glanceapp/glance)
+
+⭐ **34,800** estrellas · por [glanceapp](https://github.com/glanceapp)
+
+Dashboard auto-hosteado que centraliza todos tus feeds en un solo lugar. Ligero, rapido y altamente personalizable con widgets para RSS, Reddit, clima, mercados, YouTube y mas.
+
+✨ **Caracteristicas:**
+* Multiples widgets: RSS, Reddit, HN, clima, YouTube, Twitch, Docker
+* Binario unico <20MB, bajo consumo de memoria
+* Configuracion via YAML con layouts personalizables
+* Optimizado para movil y themes personalizables con CSS
+* Instalacion sencilla con Docker o binario directo
+* [Ver repositorio](https://github.com/glanceapp/glance)
+
+---
+
+*Fin del reporte - 05/06/2026 00:10*
+
+# 📡 Newty - Investigacion 2026-06-05
+
+**Fuente:** Investigacion manual
 **Generado:** 05/06/2026 00:05
 **Proyectos:** 1
 
