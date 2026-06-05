@@ -1,6 +1,32 @@
 # 📡 Newty - Investigacion 2026-06-05
 
 **Fuente:** Investigacion manual
+**Generado:** 05/06/2026 00:20
+**Proyectos:** 1
+
+---
+
+**Prometheus** (https://github.com/prometheus/prometheus)
+
+⭐ **64.3k** estrellas · por [prometheus](https://github.com/prometheus) · [prometheus.io](https://prometheus.io)
+
+Sistema de monitoreo y base de datos de series de tiempo. Proyecto graduado de CNCF con un modelo de datos multidimensional y potente lenguaje de consulta PromQL.
+
+✨ **Caracteristicas:**
+* Modelo de datos multidimensional (metricas con dimensiones clave/valor)
+* Lenguaje de consulta PromQL para analisis y agregacion
+* Modelo pull: recoleccion de metricas via HTTP con service discovery
+* Alertas configurables con Alertmanager integrado
+* Multiples opciones de visualizacion (Grafana, consolas, API)
+* [Ver repositorio](https://github.com/prometheus/prometheus)
+
+---
+
+*Fin del reporte - 05/06/2026 00:20*
+
+# 📡 Newty - Investigacion 2026-06-05
+
+**Fuente:** Investigacion manual
 **Generado:** 05/06/2026 00:15
 **Proyectos:** 1
 
