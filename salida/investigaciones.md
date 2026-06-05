@@ -1,8 +1,8 @@
 # 📡 Newty — Investigación 2026-06-04
 
-**Fuente:** GitHub Trending  
+**Fuente:** GitHub Trending + Investigación manual  
 **Generado:** 04/06/2026 23:36  
-**Proyectos:** 10
+**Proyectos:** 11
 
 ---
 
@@ -134,6 +134,26 @@ Multi-plataforma SDK para integrating GitHub Copilot Agent into apps y services
 * Repositorio de código abierto activo
 * Tecnología en tendencia en GitHub
 * [Ver repositorio](https://github.com/github/copilot-sdk)
+
+---
+
+### 11. **OpenCode** (https://github.com/anomalyco/opencode)
+
+⭐ **170,000** estrellas · por [anomalyco](https://github.com/anomalyco) · [opencode.ai](https://opencode.ai)
+
+El agente de programación con IA de código abierto. Funciona en terminal, IDE o escritorio con más de 75 proveedores LLM, multi-sesión y modo plan para exploración segura.
+
+✨ **Características:**
+* LSP integrado — Carga automática de LSPs para el LLM
+* Multi-sesión — Varios agentes en paralelo en el mismo proyecto
+* Links para compartir — Comparte cualquier sesión para debug o referencia
+* GitHub Copilot — Usa tu cuenta de Copilot existente
+* ChatGPT Plus/Pro — Integración directa con OpenAI
+* 75+ proveedores LLM — Cualquier modelo, incluyendo locales
+* Multi-plataforma — Terminal, app de escritorio y extensión IDE
+* Agentes integrados — Build (acceso completo) y Plan (solo lectura)
+* Código abierto (MIT) — 160K+ estrellas, 900+ contribuidores
+* 7.5M+ desarrolladores activos por mes
 
 ---
 
