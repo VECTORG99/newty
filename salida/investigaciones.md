@@ -1,3 +1,72 @@
+# 📡 Newty - Investigacion 2026-06-07
+
+**Fuente:** Investigacion manual
+**Generado:** 07/06/2026 17:30
+**Proyectos:** 1
+
+---
+
+**ponytail** (https://github.com/DietrichGebert/ponytail)
+
+⭐ **26.3k** estrellas · por DietrichGebert
+
+Hace que tu agente IA piense como el senior mas vago. Antes de escribir codigo revisa: YAGNI, stdlib, nativo, dependencias, una linea, minimo necesario. 80-94% menos codigo.
+
+✨ **Caracteristicas:**
+* 80-94% menos codigo, 3-6x mas rapido, 42-75% mas barato
+* Funciona con 13 agentes: Claude Code, Codex, OpenCode, Copilot, Cursor, Windsurf, Gemini y mas
+* Comandos: /ponytail lite/full/ultra/off, /ponytail-review, /ponytail-audit
+* Nunca sacrifica validacion, seguridad ni accesibilidad
+* Plugin para Claude Code, Codex y OpenCode; rules para Cursor, Windsurf, Cline y Copilot
+
+---
+
+*Fin del reporte - 07/06/2026 17:30*
+
+# 📡 Newty - Investigacion 2026-06-07
+
+**Fuente:** GitHub Trending  
+**Generado:** 07/06/2026 17:21  
+**Proyectos:** 1
+
+---
+
+**last30days-skill** (https://github.com/mvanhorn/last30days-skill)
+
+⭐ **1,097** estrellas · por mvanhorn
+
+AI agent skill que researches any topic across Reddit, X, YouTube, HN, Polymarket, y el web - then synthesizes un grounded summary
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,097 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 07/06/2026 17:21*
+
+
+# 📡 Newty - Investigacion 2026-06-07
+
+**Fuente:** GitHub Trending  
+**Generado:** 07/06/2026 17:21  
+**Proyectos:** 1
+
+---
+
+**last30days-skill** (https://github.com/mvanhorn/last30days-skill)
+
+⭐ **1,097** estrellas · por [mvanhorn](https://github.com/mvanhorn)
+
+AI agent skill que researches any topic across Reddit, X, YouTube, HN, Polymarket, y el web - then synthesizes un grounded summary
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,097 estrellas en GitHub
+* Tecnologia en tendencia
+* [Ver repositorio](https://github.com/mvanhorn/last30days-skill)
+*Fin del reporte - 07/06/2026 17:21*
+
+
 # 📡 Newty - Investigacion 2026-06-05
 
 **Fuente:** Investigacion manual
