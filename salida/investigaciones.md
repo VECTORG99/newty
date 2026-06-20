@@ -1,3 +1,333 @@
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending  
+**Periodo:** mensual  
+**Generado:** 20/06/2026 00:36  
+**Proyectos:** 2
+
+---
+
+**headroom** (https://github.com/chopratejas/headroom)
+
+⭐ **34,870** estrellas · por chopratejas
+
+Compress herramienta outputs, logs, files, y RAG chunks before they reach el LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP servidor.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 34,870 estrellas en GitHub
+* Tecnologia en tendencia
+**MoneyPrinterTurbo** (https://github.com/harry0703/MoneyPrinterTurbo)
+
+⭐ **33,118** estrellas · por harry0703
+
+利用AI大模型，一键生成高清短视频 Generate short videos con one click usando AI LLM.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 33,118 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:36*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending + GitLab Trending  
+**Periodo:** semanal  
+**Generado:** 20/06/2026 00:36  
+**Proyectos:** 4
+
+---
+
+**SkillSpector** (https://github.com/NVIDIA/SkillSpector)
+
+⭐ **5,026** estrellas · por NVIDIA
+
+Security scanner para AI agent skills. Detect vulnerabilities, malicious patterns, y security risks.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 5,026 estrellas en GitHub
+* Tecnologia en tendencia
+**iptv** (https://github.com/iptv-org/iptv)
+
+⭐ **8,035** estrellas · por iptv-org
+
+Collection of publicly available IPTV channels desde all over el world
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 8,035 estrellas en GitHub
+* Tecnologia en tendencia
+**veloren** (https://gitlab.com/veloren/veloren)
+
+⭐ **2372** estrellas · por veloren
+
+Veloren is un multiplayer voxel RPG escrito en Rust. It is inspired by games such as Cube World, Legend of Zelda: Breath of el Wild, Dwarf Fortress y Minecraft.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 2372 estrellas en GitHub
+* Tecnologia en tendencia
+**Appsemble** (https://gitlab.com/appsemble/appsemble)
+
+⭐ **42** estrellas · por appsemble
+
+The código abierto low-code app construiring plataforma
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 42 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:36*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending  
+**Periodo:** diario  
+**Generado:** 20/06/2026 00:36  
+**Proyectos:** 1
+
+---
+
+**codebase-memory-mcp** (https://github.com/DeusData/codebase-memory-mcp)
+
+⭐ **1,058** estrellas · por DeusData
+
+High-performance code intelligence MCP servidor. Indexes codebases into un persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,058 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:36*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending  
+**Periodo:** diario  
+**Generado:** 20/06/2026 00:36  
+**Proyectos:** 2
+
+---
+
+**codebase-memory-mcp** (https://github.com/DeusData/codebase-memory-mcp)
+
+⭐ **1,058** estrellas · por DeusData
+
+High-performance code intelligence MCP servidor. Indexes codebases into un persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,058 estrellas en GitHub
+* Tecnologia en tendencia
+**timesfm** (https://github.com/google-research/timesfm)
+
+⭐ **1,510** estrellas · por google-research
+
+TimesFM (Time Series Foundation Model) is un pretrained time-series foundation model developed by Google Research para time-series forecasting.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,510 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:36*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending + GitLab Trending  
+**Periodo:** diario  
+**Generado:** 20/06/2026 00:35  
+**Proyectos:** 4
+
+---
+
+**codebase-memory-mcp** (https://github.com/DeusData/codebase-memory-mcp)
+
+⭐ **1,058** estrellas · por DeusData
+
+High-performance code intelligence MCP servidor. Indexes codebases into un persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,058 estrellas en GitHub
+* Tecnologia en tendencia
+**timesfm** (https://github.com/google-research/timesfm)
+
+⭐ **1,510** estrellas · por google-research
+
+TimesFM (Time Series Foundation Model) is un pretrained time-series foundation model developed by Google Research para time-series forecasting.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,510 estrellas en GitHub
+* Tecnologia en tendencia
+**Appsemble** (https://gitlab.com/appsemble/appsemble)
+
+⭐ **42** estrellas · por appsemble
+
+The código abierto low-code app construiring plataforma
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 42 estrellas en GitHub
+* Tecnologia en tendencia
+**mirror** (https://gitlab.com/hagezi/mirror)
+
+⭐ **10** estrellas · por hagezi
+
+Proyecto mirror en GitLab
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 10 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:35*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending  
+**Periodo:** diario  
+**Generado:** 20/06/2026 00:33  
+**Proyectos:** 1
+
+---
+
+**codebase-memory-mcp** (https://github.com/DeusData/codebase-memory-mcp)
+
+⭐ **1,058** estrellas · por DeusData
+
+High-performance code intelligence MCP servidor. Indexes codebases into un persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,058 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:33*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending  
+**Periodo:** mensual  
+**Generado:** 20/06/2026 00:33  
+**Proyectos:** 1
+
+---
+
+**headroom** (https://github.com/chopratejas/headroom)
+
+⭐ **34,870** estrellas · por chopratejas
+
+Compress herramienta outputs, logs, files, y RAG chunks before they reach el LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP servidor.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 34,870 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:33*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending  
+**Periodo:** semanal  
+**Generado:** 20/06/2026 00:33  
+**Proyectos:** 1
+
+---
+
+**SkillSpector** (https://github.com/NVIDIA/SkillSpector)
+
+⭐ **5,026** estrellas · por NVIDIA
+
+Security scanner para AI agent skills. Detect vulnerabilities, malicious patterns, y security risks.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 5,026 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:33*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending  
+**Generado:** 20/06/2026 00:17  
+**Proyectos:** 1
+
+---
+
+**codebase-memory-mcp** (https://github.com/DeusData/codebase-memory-mcp)
+
+⭐ **1,058** estrellas · por DeusData
+
+High-performance code intelligence MCP servidor. Indexes codebases into un persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,058 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:17*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending  
+**Generado:** 20/06/2026 00:17  
+**Proyectos:** 1
+
+---
+
+**codebase-memory-mcp** (https://github.com/DeusData/codebase-memory-mcp)
+
+⭐ **1,058** estrellas · por DeusData
+
+High-performance code intelligence MCP servidor. Indexes codebases into un persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,058 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:17*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
+**Fuente:** GitHub Trending  
+**Generado:** 20/06/2026 00:17  
+**Proyectos:** 1
+
+---
+
+**codebase-memory-mcp** (https://github.com/DeusData/codebase-memory-mcp)
+
+⭐ **1,058** estrellas · por DeusData
+
+High-performance code intelligence MCP servidor. Indexes codebases into un persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,058 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:17*
+
+
 # 📡 Newty - Investigacion 2026-06-07
 
 **Fuente:** Investigacion manual
