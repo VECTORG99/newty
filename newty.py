@@ -174,8 +174,6 @@ def generar_yaml_item(proyecto, fuente_original="github.com"):
     fuente = proyecto.get("fuente", "")
     if "gitlab" in fuente.lower():
         source = "gitlab.com"
-    elif "reddit" in fuente.lower():
-        source = "reddit.com"
     else:
         source = "github.com"
 
@@ -323,7 +321,7 @@ def main():
         help="Ventana temporal (default: diario)",
     )
     parser.add_argument(
-        "--fuentes", nargs="+", choices=["github", "reddit", "gitlab"], default=None,
+        "--fuentes", nargs="+", choices=["github", "gitlab"], default=None,
         help="Fuentes de proyectos (default: github)",
     )
     parser.add_argument(
@@ -354,15 +352,6 @@ def main():
             if proyectos:
                 todos.extend(proyectos)
                 fuentes_usadas.append("GitHub Trending")
-        elif fuente == "reddit":
-            try:
-                from fuentes.reddit import scrapear_reddit
-                proyectos = scrapear_reddit(periodo=periodo, cantidad=cantidad)
-                if proyectos:
-                    todos.extend(proyectos)
-                    fuentes_usadas.append("Reddit")
-            except ImportError:
-                print("  ⚠ Fuente Reddit no disponible (falta fuentes/reddit.py)", file=sys.stderr)
         elif fuente == "gitlab":
             try:
                 from fuentes.gitlab import scrapear_gitlab_trending

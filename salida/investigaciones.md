@@ -1,5 +1,58 @@
 # 📡 Newty - Investigacion 2026-06-20
 
+**Fuente:** GitHub Trending + GitLab Trending  
+**Periodo:** diario  
+**Generado:** 20/06/2026 00:41  
+**Proyectos:** 4
+
+---
+
+**codebase-memory-mcp** (https://github.com/DeusData/codebase-memory-mcp)
+
+⭐ **1,058** estrellas · por DeusData
+
+High-performance code intelligence MCP servidor. Indexes codebases into un persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,058 estrellas en GitHub
+* Tecnologia en tendencia
+**timesfm** (https://github.com/google-research/timesfm)
+
+⭐ **1,510** estrellas · por google-research
+
+TimesFM (Time Series Foundation Model) is un pretrained time-series foundation model developed by Google Research para time-series forecasting.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1,510 estrellas en GitHub
+* Tecnologia en tendencia
+**veloren** (https://gitlab.com/veloren/veloren)
+
+⭐ **2372** estrellas · por veloren
+
+Veloren is un multiplayer voxel RPG escrito en Rust. It is inspired by games such as Cube World, Legend of Zelda: Breath of el Wild, Dwarf Fortress y Minecraft.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 2372 estrellas en GitHub
+* Tecnologia en tendencia
+**Data** (https://gitlab.com/fdroid/fdroiddata)
+
+⭐ **1173** estrellas · por fdroid
+
+Data para el main F-Droid repository at https://f-droid.org
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 1173 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:41*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
 **Fuente:** GitHub Trending  
 **Periodo:** mensual  
 **Generado:** 20/06/2026 00:36  
