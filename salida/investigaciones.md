@@ -1,5 +1,28 @@
 # 📡 Newty - Investigacion 2026-06-20
 
+**Fuente:** GitHub Trending  
+**Periodo:** semanal  
+**Generado:** 20/06/2026 00:43  
+**Proyectos:** 1
+
+---
+
+**SkillSpector** (https://github.com/NVIDIA/SkillSpector)
+
+⭐ **5,026** estrellas · por NVIDIA
+
+Security scanner para AI agent skills. Detect vulnerabilities, malicious patterns, y security risks.
+
+✨ **Caracteristicas:**
+* Repositorio de codigo abierto activo
+* 5,026 estrellas en GitHub
+* Tecnologia en tendencia
+
+*Fin del reporte - 20/06/2026 00:43*
+
+
+# 📡 Newty - Investigacion 2026-06-20
+
 **Fuente:** GitHub Trending + GitLab Trending  
 **Periodo:** diario  
 **Generado:** 20/06/2026 00:41  

@@ -20,7 +20,6 @@ CONFIG_POR_DEFECTO = {
     "idioma": "",
     "historial": os.path.join(SALIDA_DIR, "investigaciones.md"),
     "periodo": "diario",
-    "fuentes": ["github"],
     "formato": "md",
     "salida_yaml": os.path.join(SALIDA_DIR, "yaml"),
 }
@@ -170,12 +169,7 @@ def generar_yaml_item(proyecto, fuente_original="github.com"):
     desc_es = traducir_descripcion(desc)
     autor = proyecto.get("autor", "?")
 
-    # mapear fuente a dominio para homedir
-    fuente = proyecto.get("fuente", "")
-    if "gitlab" in fuente.lower():
-        source = "gitlab.com"
-    else:
-        source = "github.com"
+    source = "github.com"
 
     # id: SHA-1 del URL truncado a 12 chars
     item_id = hashlib.sha1(repo_url.encode()).hexdigest()[:12]
@@ -321,10 +315,6 @@ def main():
         help="Ventana temporal (default: diario)",
     )
     parser.add_argument(
-        "--fuentes", nargs="+", choices=["github", "gitlab"], default=None,
-        help="Fuentes de proyectos (default: github)",
-    )
-    parser.add_argument(
         "--formato", choices=["md", "yaml"], default=None,
         help="Formato de salida (default: md)",
     )
@@ -337,62 +327,33 @@ def main():
     config = cargar_config()
     cantidad = args.cantidad or config.get("cantidad", 1)
     periodo = args.periodo or config.get("periodo", "diario")
-    fuentes = args.fuentes or config.get("fuentes", ["github"])
     formato = args.formato or config.get("formato", "md")
 
-    print(f"🔍 Newty - Investigando proyectos trending ({periodo})...\n")
+    print(f"🔍 Newty - Investigando GitHub Trending ({periodo})...\n")
 
-    # Recolectar proyectos de todas las fuentes
-    todos = []
-    fuentes_usadas = []
+    proyectos = scrapear_github_trending(cantidad=cantidad, periodo=periodo)
 
-    for fuente in fuentes:
-        if fuente == "github":
-            proyectos = scrapear_github_trending(cantidad=cantidad, periodo=periodo)
-            if proyectos:
-                todos.extend(proyectos)
-                fuentes_usadas.append("GitHub Trending")
-        elif fuente == "gitlab":
-            try:
-                from fuentes.gitlab import scrapear_gitlab_trending
-                proyectos = scrapear_gitlab_trending(cantidad=cantidad)
-                if proyectos:
-                    todos.extend(proyectos)
-                    fuentes_usadas.append("GitLab Trending")
-            except ImportError:
-                print("  ⚠ Fuente GitLab no disponible (falta fuentes/gitlab.py)", file=sys.stderr)
-
-    if not todos:
+    if not proyectos:
         print("❌ No se pudieron obtener proyectos. Revisa tu conexion.")
         sys.exit(1)
 
-    # ponytail: dedup by repo_url
-    vistos = set()
-    unicos = []
-    for p in todos:
-        url = p.get("repo_url", "")
-        if url and url not in vistos:
-            vistos.add(url)
-            unicos.append(p)
-
-    nombre_fuentes = " + ".join(fuentes_usadas)
-    print(f"✅ {len(unicos)} proyectos obtenidos de: {nombre_fuentes}\n")
+    print(f"✅ {len(proyectos)} proyectos obtenidos de GitHub Trending\n")
 
     if formato == "yaml":
         salida_yaml = config.get("salida_yaml", os.path.join(SALIDA_DIR, "yaml"))
         if not os.path.isabs(salida_yaml):
             salida_yaml = os.path.join(SCRIPT_DIR, salida_yaml)
-        archivos = generar_informe_yaml(unicos, salida_yaml)
+        archivos = generar_informe_yaml(proyectos, salida_yaml)
         print(f"📄 YAML generado: {len(archivos)} archivos en {salida_yaml}")
         for a in archivos:
             print(f"   {os.path.basename(a)}")
         # tambien generar MD para historial
-        informe = generar_informe(unicos, fuentes=nombre_fuentes, periodo=periodo)
+        informe = generar_informe(proyectos, periodo=periodo)
         ruta_historial = config["historial"]
         guardar_historial(informe, ruta_historial)
         print(f"📄 Historial guardado: {ruta_historial}")
     else:
-        informe = generar_informe(unicos, fuentes=nombre_fuentes, periodo=periodo)
+        informe = generar_informe(proyectos, periodo=periodo)
         ruta_historial = config["historial"]
         guardar_historial(informe, ruta_historial)
         print(f"📄 Historial guardado: {ruta_historial}")
@@ -404,7 +365,7 @@ def main():
             print(f"🌐 HTML generado: {ruta_html}")
 
         print(f"\n{'='*60}")
-        print(f"  📡 NEWTY - {len(unicos)} PROYECTOS ({nombre_fuentes}, {periodo})")
+        print(f"  📡 NEWTY - {len(proyectos)} PROYECTOS ({periodo})")
         print(f"{'='*60}\n")
         print(informe)
 

@@ -3,7 +3,6 @@
   "idioma": "",
   "historial": "salida/investigaciones.md",
   "periodo": "diario",
-  "fuentes": ["github"],
   "formato": "md",
   "salida_yaml": "salida/yaml/"
 }

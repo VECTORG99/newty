@@ -1,6 +1,6 @@
 # Newty
 
-Newty investiga y expone los mejores proyectos open source del momento desde **GitHub Trending y GitLab**. Genera fichas informativas en espanol para compartir con la comunidad y dar visibilidad a proyectos open source emergentes.
+Newty investiga y expone los mejores proyectos open source del momento desde **GitHub Trending**. Genera fichas informativas en espanol para compartir con la comunidad y dar visibilidad a proyectos open source emergentes.
 
 Proyecto complementario a [homedir](https://github.com/os-santiago/homedir), la plataforma de comunidad DevRel/OpenSource de OS Santiago.
 
@@ -9,17 +9,16 @@ Proyecto complementario a [homedir](https://github.com/os-santiago/homedir), la 
 - **Dar visibilidad** a proyectos open source con potencial, grandes y pequenos
 - **Apoyar a la comunidad** open source redirigiendo trafico y atencion a sus repositorios
 - **Alimentar plataformas comunitarias** como homedir con contenido curado automaticamente
-- **Mantenerte al dia** con las tecnologias emergentes en GitHub y GitLab
+- **Mantenerte al dia** con las tecnologias emergentes en GitHub
 
 ## Caracteristicas
 
-- **Multi-fuente** — GitHub Trending y GitLab Trending
 - **Multi-periodo** — Diario, semanal, mensual. Descubre que es tendencia esta semana o este mes
 - **Salida dual Markdown + YAML** — Markdown para compartir en Discord/comunidad; YAML compatible con el schema Community Content de homedir
 - **HTML con estilo dark mode** — Listo para abrir en el navegador
 - **Historial completo** — Cada ejecucion se acumula en `salida/investigaciones.md`
 - **Sin dependencias externas** — Solo usa la libreria estandar de Python 3
-- **Configurable** — Cantidad, periodo, fuentes, formato
+- **Configurable** — Cantidad, periodo, formato
 
 ## Instalacion
 
@@ -32,19 +31,19 @@ python3 newty.py --help
 ## Uso
 
 ```bash
-# Ejecutar con defaults: GitHub Trending, diario, 1 proyecto
+# Ejecutar con defaults: diario, 1 proyecto
 python3 newty.py
 
-# Con multiples fuentes y periodo
-python3 newty.py -c 5 --periodo semanal --fuentes github gitlab
+# Periodo semanal, 5 proyectos
+python3 newty.py -c 5 --periodo semanal
 
-# Periodo mensual, solo GitLab
-python3 newty.py --periodo mensual --fuentes gitlab -c 10
+# Periodo mensual
+python3 newty.py --periodo mensual -c 10
 
 # Salida YAML para homedir
-python3 newty.py -c 5 --fuentes github --formato yaml
+python3 newty.py -c 5 --formato yaml
 
-# Formato markdown sin HTML
+# Solo markdown, sin HTML
 python3 newty.py -c 3 --no-html
 ```
 
@@ -67,10 +66,8 @@ Descripcion traducida al espanol del proyecto.
 
 ```
 newty/
-├── newty.py                  # Script principal (orquestador multi-fuente)
+├── newty.py                  # Script principal
 ├── config.json               # Configuracion
-├── fuentes/                  # Extractores por fuente
-│   └── gitlab.py             # Extractor de GitLab
 ├── salida/
 │   ├── investigaciones.md    # Historial acumulativo en Markdown
 │   ├── newty.html            # Ultima investigacion en HTML
@@ -89,7 +86,6 @@ Edita `config.json`:
   "idioma": "",
   "historial": "salida/investigaciones.md",
   "periodo": "diario",
-  "fuentes": ["github"],
   "formato": "md",
   "salida_yaml": "salida/yaml/"
 }
@@ -101,7 +97,6 @@ Edita `config.json`:
 | `idioma`      | Filtrar por lenguaje de programacion         | `""` (todos)                 |
 | `historial`   | Ruta del archivo de historial                | `salida/investigaciones.md`  |
 | `periodo`     | Ventana temporal: diario, semanal, mensual   | `"diario"`                   |
-| `fuentes`     | Fuentes: github, gitlab (o varias)        | `["github"]`                 |
 | `formato`     | Formato de salida: md, yaml                  | `"md"`                       |
 | `salida_yaml` | Directorio de salida YAML                    | `"salida/yaml/"`             |
 
@@ -113,7 +108,7 @@ Para usar Newty como alimentador de homedir:
 
 ```bash
 # Generar fichas YAML para homedir
-python3 newty.py -c 5 --fuentes github gitlab --periodo semanal --formato yaml
+python3 newty.py -c 5 --periodo semanal --formato yaml
 
 # Los archivos YAML quedan en salida/yaml/
 # Copiarlos o desplegarlos al content dir de homedir:
