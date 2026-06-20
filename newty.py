@@ -2,32 +2,39 @@
 """Newty — Extractor de proyectos trending de GitHub"""
 
 import argparse
+import hashlib
 import json
 import os
 import re
 import sys
 import urllib.request
 import urllib.error
-from datetime import datetime
+from datetime import datetime, timezone
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SALIDA_DIR = os.path.join(SCRIPT_DIR, "salida")
 CONFIG_PATH = os.path.join(SCRIPT_DIR, "config.json")
 
-MAX_FEATURES = 5
-
 CONFIG_POR_DEFECTO = {
     "cantidad": 1,
     "idioma": "",
     "historial": os.path.join(SALIDA_DIR, "investigaciones.md"),
+    "periodo": "diario",
+    "formato": "md",
+    "salida_yaml": os.path.join(SALIDA_DIR, "yaml"),
 }
 
 
-def scrapear_github_trending(idioma="", cantidad=10):
+def scrapear_github_trending(idioma="", cantidad=10, periodo="diario"):
     """Scrapea GitHub Trending y devuelve lista de proyectos."""
     url = "https://github.com/trending"
     if idioma:
         url += f"/{idioma}"
+    # ponytail: daily is default (no param), weekly/monthly add ?since=
+    if periodo == "semanal":
+        url += "?since=weekly"
+    elif periodo == "mensual":
+        url += "?since=monthly"
 
     headers = {
         "User-Agent": (
@@ -138,26 +145,80 @@ def generar_ficha(proyecto):
         f"{stars} estrellas en GitHub",
         f"Tecnologia en tendencia",
     ]
-    if len(features) > MAX_FEATURES:
-        features = features[:MAX_FEATURES]
 
     ficha = f"**{nombre}** ({repo_url})\n\n"
-    ficha += f"⭐ **{stars}** estrellas · por [{autor}](https://github.com/{autor})\n\n"
+    ficha += f"⭐ **{stars}** estrellas · por {autor}\n\n"
     ficha += f"{desc_es}\n\n"
     ficha += "✨ **Caracteristicas:**\n"
     for f in features:
         ficha += f"* {f}\n"
-    ficha += f"* [Ver repositorio]({repo_url})"
 
     return ficha
 
 
-def generar_informe(proyectos, fuentes="GitHub Trending"):
+def _yaml_quote(s):
+    """Escapa un string para YAML (comillas dobles)."""
+    return json.dumps(s, ensure_ascii=False)
+
+
+def generar_yaml_item(proyecto, fuente_original="github.com"):
+    """Genera un item YAML compatible con el schema Community Content de homedir."""
+    nombre = proyecto.get("nombre", "?")
+    repo_url = proyecto.get("repo_url", "")
+    desc = proyecto.get("descripcion", "")
+    desc_es = traducir_descripcion(desc)
+    autor = proyecto.get("autor", "?")
+
+    source = "github.com"
+
+    # id: SHA-1 del URL truncado a 12 chars
+    item_id = hashlib.sha1(repo_url.encode()).hexdigest()[:12]
+
+    ahora = datetime.now(timezone.utc)
+    fecha_iso = ahora.strftime("%Y-%m-%dT%H:%M:%SZ")
+    fecha_archivo = ahora.strftime("%Y%m%d")
+
+    lines = [
+        f"id: {_yaml_quote(item_id)}",
+        f"title: {_yaml_quote(nombre)}",
+        f"url: {_yaml_quote(repo_url)}",
+        f"summary: >-",
+        f"  {desc_es[:320]}",
+        f"source: {_yaml_quote(source)}",
+        f"created_at: {_yaml_quote(fecha_iso)}",
+        f"media_type: article_blog",
+        "tags:",
+        "  - open-source",
+        "  - trending-tech",
+    ]
+    if autor and autor != "?":
+        lines.append(f"author: {_yaml_quote(autor)}")
+
+    yaml_texto = "\n".join(lines) + "\n"
+    nombre_archivo = f"{fecha_archivo}-{nombre}-{item_id}.yml"
+    return nombre_archivo, yaml_texto
+
+
+def generar_informe_yaml(proyectos, salida_dir):
+    """Genera archivos YAML para cada proyecto en el directorio de salida."""
+    os.makedirs(salida_dir, exist_ok=True)
+    archivos = []
+    for p in proyectos:
+        nombre_archivo, contenido = generar_yaml_item(p)
+        ruta = os.path.join(salida_dir, nombre_archivo)
+        with open(ruta, "w", encoding="utf-8") as f:
+            f.write(contenido)
+        archivos.append(ruta)
+    return archivos
+
+
+def generar_informe(proyectos, fuentes="GitHub Trending", periodo="diario"):
     ahora = datetime.now()
     fecha = ahora.strftime("%d/%m/%Y %H:%M")
 
     informe = f"# 📡 Newty - Investigacion {ahora.strftime('%Y-%m-%d')}\n\n"
     informe += f"**Fuente:** {fuentes}  \n"
+    informe += f"**Periodo:** {periodo}  \n"
     informe += f"**Generado:** {fecha}  \n"
     informe += f"**Proyectos:** {len(proyectos)}\n\n"
     informe += "---\n\n"
@@ -220,6 +281,8 @@ def generar_html(md_texto):
 
     body = md_texto
     body = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', body)
+    # ponytail: auto-link bare URLs, skip ones already inside <a href="...">
+    body = re.sub(r'(?<!")(https?://[^\s<>"\)]+)', r'<a href="\1">\1</a>', body)
     body = re.sub(r'^### (.+)$', r'<h3>\1</h3>', body, flags=re.MULTILINE)
     body = re.sub(r'^## (.+)$', r'<h2>\1</h2>', body, flags=re.MULTILINE)
     body = re.sub(r'^# (.+)$', r'<h1>\1</h1>', body, flags=re.MULTILINE)
@@ -244,25 +307,31 @@ def main():
         description="Newty - Investigacion de proyectos trending"
     )
     parser.add_argument(
-        "--modo", choices=["github", "completo"], default="github",
-        help="Modo: solo GitHub (default) o completo",
-    )
-    parser.add_argument(
         "-c", "--cantidad", type=int, default=None,
         help="Cantidad de proyectos (default: 1)",
     )
     parser.add_argument(
+        "--periodo", choices=["diario", "semanal", "mensual"], default=None,
+        help="Ventana temporal (default: diario)",
+    )
+    parser.add_argument(
+        "--formato", choices=["md", "yaml"], default=None,
+        help="Formato de salida (default: md)",
+    )
+    parser.add_argument(
         "--no-html", action="store_true",
-        help="No generar versión HTML",
+        help="No generar version HTML",
     )
     args = parser.parse_args()
 
     config = cargar_config()
     cantidad = args.cantidad or config.get("cantidad", 1)
+    periodo = args.periodo or config.get("periodo", "diario")
+    formato = args.formato or config.get("formato", "md")
 
-    print("🔍 Newty - Investigando proyectos trending...\n")
+    print(f"🔍 Newty - Investigando GitHub Trending ({periodo})...\n")
 
-    proyectos = scrapear_github_trending(cantidad=cantidad)
+    proyectos = scrapear_github_trending(cantidad=cantidad, periodo=periodo)
 
     if not proyectos:
         print("❌ No se pudieron obtener proyectos. Revisa tu conexion.")
@@ -270,24 +339,35 @@ def main():
 
     print(f"✅ {len(proyectos)} proyectos obtenidos de GitHub Trending\n")
 
-    if args.modo == "completo":
-        print("🌐 Modo completo: por ahora solo GitHub Trending disponible.\n")
+    if formato == "yaml":
+        salida_yaml = config.get("salida_yaml", os.path.join(SALIDA_DIR, "yaml"))
+        if not os.path.isabs(salida_yaml):
+            salida_yaml = os.path.join(SCRIPT_DIR, salida_yaml)
+        archivos = generar_informe_yaml(proyectos, salida_yaml)
+        print(f"📄 YAML generado: {len(archivos)} archivos en {salida_yaml}")
+        for a in archivos:
+            print(f"   {os.path.basename(a)}")
+        # tambien generar MD para historial
+        informe = generar_informe(proyectos, periodo=periodo)
+        ruta_historial = config["historial"]
+        guardar_historial(informe, ruta_historial)
+        print(f"📄 Historial guardado: {ruta_historial}")
+    else:
+        informe = generar_informe(proyectos, periodo=periodo)
+        ruta_historial = config["historial"]
+        guardar_historial(informe, ruta_historial)
+        print(f"📄 Historial guardado: {ruta_historial}")
 
-    informe = generar_informe(proyectos)
-    ruta_historial = config["historial"]
-    guardar_historial(informe, ruta_historial)
-    print(f"📄 Historial guardado: {ruta_historial}")
+        if not args.no_html:
+            ruta_html = os.path.join(SALIDA_DIR, "newty.html")
+            with open(ruta_html, "w", encoding="utf-8") as f:
+                f.write(generar_html(informe))
+            print(f"🌐 HTML generado: {ruta_html}")
 
-    if not args.no_html:
-        ruta_html = os.path.join(SALIDA_DIR, "newty.html")
-        with open(ruta_html, "w", encoding="utf-8") as f:
-            f.write(generar_html(informe))
-        print(f"🌐 HTML generado: {ruta_html}")
-
-    print(f"\n{'='*60}")
-    print(f"  📡 NEWTY - {len(proyectos)} PROYECTOS TRENDING")
-    print(f"{'='*60}\n")
-    print(informe)
+        print(f"\n{'='*60}")
+        print(f"  📡 NEWTY - {len(proyectos)} PROYECTOS ({periodo})")
+        print(f"{'='*60}\n")
+        print(informe)
 
 
 if __name__ == "__main__":
