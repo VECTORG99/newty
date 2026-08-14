@@ -42,7 +42,7 @@ def scrapear_github_trending(idioma="", cantidad=10):
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             html = resp.read().decode("utf-8", errors="replace")
-    except Exception as e:
+    except (urllib.error.URLError, ValueError, IOError) as e:
         print(f"  Error al obtener GitHub Trending: {e}", file=sys.stderr)
         return []
 
@@ -244,10 +244,6 @@ def main():
         description="Newty - Investigacion de proyectos trending"
     )
     parser.add_argument(
-        "--modo", choices=["github", "completo"], default="github",
-        help="Modo: solo GitHub (default) o completo",
-    )
-    parser.add_argument(
         "-c", "--cantidad", type=int, default=None,
         help="Cantidad de proyectos (default: 1)",
     )
@@ -259,19 +255,17 @@ def main():
 
     config = cargar_config()
     cantidad = args.cantidad or config.get("cantidad", 1)
+    idioma = config.get("idioma", "")
 
     print("🔍 Newty - Investigando proyectos trending...\n")
 
-    proyectos = scrapear_github_trending(cantidad=cantidad)
+    proyectos = scrapear_github_trending(idioma=idioma, cantidad=cantidad)
 
     if not proyectos:
         print("❌ No se pudieron obtener proyectos. Revisa tu conexion.")
         sys.exit(1)
 
     print(f"✅ {len(proyectos)} proyectos obtenidos de GitHub Trending\n")
-
-    if args.modo == "completo":
-        print("🌐 Modo completo: por ahora solo GitHub Trending disponible.\n")
 
     informe = generar_informe(proyectos)
     ruta_historial = config["historial"]
