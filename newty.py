@@ -24,7 +24,14 @@ CONFIG_POR_DEFECTO = {
 
 
 def scrapear_github_trending(idioma="", cantidad=10):
-    """Scrapea GitHub Trending y devuelve lista de proyectos."""
+    """Scrapea GitHub Trending y devuelve lista de proyectos.
+
+    WARNING: This function relies on GitHub's HTML structure for the Trending
+    page (article tags, h2/h3 headings, octicon-star SVGs, color-fg-muted
+    description paragraphs). If GitHub changes their HTML layout, the regex
+    patterns below will break. Consider switching to the GitHub API or
+    GraphQL when a suitable endpoint becomes available.
+    """
     url = "https://github.com/trending"
     if idioma:
         url += f"/{idioma}"
@@ -87,6 +94,9 @@ def scrapear_github_trending(idioma="", cantidad=10):
 
         proyecto["stars"] = stars or "?"
 
+        if not proyecto.get("nombre") or not proyecto.get("autor") or not proyecto.get("repo_url"):
+            continue
+
         proyectos.append(proyecto)
 
     return proyectos
@@ -113,6 +123,29 @@ def traducir_descripcion(desc):
         "written in": "escrito en", "written": "escrito",
         "open-source": "código abierto",
         "open source": "código abierto",
+        " is ": " es ", " are ": " son ", " was ": " fue ", " were ": " fueron ",
+        " will ": " será ", " can ": " puede ", " should ": " debería ",
+        " not ": " no ", " but ": " pero ", " or ": " o ", " if ": " si ",
+        " when ": " cuando ", " where ": " donde ", " why ": " por qué ",
+        " how ": " cómo ", " which ": " cual ", " who ": " quien ",
+        "language": "lenguaje", "code": "código", "data": "datos",
+        "user": "usuario", "users": "usuarios", "web": "web",
+        "api": "API", "service": "servicio", "services": "servicios",
+        "package": "paquete", "module": "módulo", "function": "función",
+        "class": "clase", "object": "objeto", "method": "método",
+        "error": "error", "warning": "advertencia", "version": "versión",
+        "feature": "característica", "features": "características",
+        "performance": "rendimiento", "scalable": "escalable",
+        "secure": "seguro", "security": "seguridad",
+        "easy": "fácil", "powerful": "potente", "flexible": "flexible",
+        "config": "configuración", "configuration": "configuración",
+        "command": "comando", "commands": "comandos",
+        "file": "archivo", "files": "archivos", "directory": "directorio",
+        "network": "red", "connection": "conexión", "request": "petición",
+        "response": "respuesta", "status": "estado", "type": "tipo",
+        "value": "valor", "default": "por defecto", "custom": "personalizado",
+        "real-time": "tiempo real", "async": "asíncrono",
+        "compiler": "compilador", "runtime": "tiempo de ejecución",
     }
 
     resultado = desc
